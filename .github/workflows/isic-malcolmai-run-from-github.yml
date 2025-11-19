@@ -1,0 +1,201 @@
+name: ISIC MalcolmAI - Run From GitHub (Multi-Subnet)
+
+on:
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+      subnetPrefixes:
+        description: "Comma-separated IPv4 subnet prefixes (e.g. 192.168.1.,192.168.2.)"
+        required: true
+        default: "192.168.1."
+      orchestratorDir:
+        description: "Directory on this CPU to store machines.txt"
+        required: true
+        default: "C:\\MalcolmAIOrchestrator"
+
+jobs:
+  run-malcolmai:
+    # This CPU as orchestrator
+    runs-on: [self-hosted, windows, isic-controller]
+
+    env:
+      SUBNET_PREFIXES: ${{ github.event.inputs.subnetPrefixes }}
+      ORCH_DIR:        ${{ github.event.inputs.orchestratorDir }}
+      REPO:            ${{ github.repository }}      # owner/repo
+      BRANCH:          ${{ github.ref_name }}        # e.g. main
+      ISIC_USERNAME:   ${{ secrets.ISIC_USERNAME }}  # admin user on nodes
+      ISIC_PASSWORD:   ${{ secrets.ISIC_PASSWORD }}  # admin password on nodes
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Discover ISIC nodes and run MalcolmAI from GitHub
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+
+          # ====== CONFIG & ENV ======
+          $prefixInput     = $env:SUBNET_PREFIXES
+          $OrchestratorDir = $env:ORCH_DIR
+          $Repo            = $env:REPO      # "owner/repo"
+          $Branch          = $env:BRANCH    # e.g. "main"
+
+          if (-not (Test-Path $OrchestratorDir)) {
+              New-Item -ItemType Directory -Path $OrchestratorDir -Force | Out-Null
+          }
+
+          $MachineList = Join-Path $OrchestratorDir "machines.txt"
+
+          # Parse comma-separated prefixes
+          $prefixes = $prefixInput -split ',' | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne "" }
+
+          if (-not $prefixes -or $prefixes.Count -eq 0) {
+              Write-Error "No valid subnet prefixes provided."
+              exit 1
+          }
+
+          Write-Host "Orchestrator directory: $OrchestratorDir"
+          Write-Host "machines.txt path:      $MachineList"
+          Write-Host "Subnets to scan:"
+          $prefixes | ForEach-Object { Write-Host " - $_*" }
+          Write-Host "GitHub repo:            $Repo"
+          Write-Host "Branch:                 $Branch"
+
+          # Base URL for raw file downloads directly from GitHub
+          $BaseUrl = "https://raw.githubusercontent.com/$Repo/$Branch"
+          Write-Host "Base URL for raw files: $BaseUrl"
+
+          # ====== DISCOVERY ACROSS MULTIPLE SUBNETS ======
+          $allDiscovered = @()
+
+          foreach ($Subnet in $prefixes) {
+              Write-Host "Scanning subnet $Subnet* for responsive hosts..."
+
+              $localDiscovered = 1..254 | ForEach-Object {
+                  $ip = "$Subnet$_"
+
+                  if (Test-Connection -ComputerName $ip -Count 1 -Quiet -ErrorAction SilentlyContinue) {
+                      try {
+                          $hostEntry = [System.Net.Dns]::GetHostEntry($ip)
+                          $name = $hostEntry.HostName.Split('.')[0]
+                          if ($name) { $name }
+                      } catch {
+                          # No DNS entry or lookup error; skip
+                      }
+                  }
+              }
+
+              if ($localDiscovered) {
+                  $allDiscovered += $localDiscovered
+              }
+          }
+
+          if (-not $allDiscovered -or $allDiscovered.Count -eq 0) {
+              Write-Error "No hosts responded to ping on the provided subnets."
+              exit 1
+          }
+
+          $discovered = $allDiscovered | Sort-Object -Unique
+
+          Write-Host "Ping-responsive hosts across all subnets:"
+          $discovered | ForEach-Object { Write-Host " - $_" }
+
+          Write-Host "Probing WinRM (Test-WSMan) on discovered hosts..."
+
+          $winrmCapable = @()
+          foreach ($c in $discovered) {
+              if (Test-WSMan -ComputerName $c -ErrorAction SilentlyContinue) {
+                  $winrmCapable += $c
+              }
+          }
+
+          if (-not $winrmCapable -or $winrmCapable.Count -eq 0) {
+              Write-Error "No WinRM-compatible (ISIC) nodes discovered on the provided subnets."
+              exit 1
+          }
+
+          $computers = $winrmCapable | Sort-Object -Unique
+
+          Write-Host "ISIC-compatible nodes (WinRM OK):"
+          $computers | ForEach-Object { Write-Host " - $_" }
+
+          # ====== WRITE machines.txt ON ORCHESTRATOR ======
+          Write-Host "Writing ISIC node list to $MachineList..."
+          Set-Content -Path $MachineList -Value ($computers -join [Environment]::NewLine) -Encoding UTF8
+
+          # ====== BUILD CREDENTIALS FROM GITHUB SECRETS ======
+          $user = $env:ISIC_USERNAME
+          $pass = $env:ISIC_PASSWORD
+
+          if (-not $user -or -not $pass) {
+              Write-Error "ISIC_USERNAME / ISIC_PASSWORD secrets are not set."
+              exit 1
+          }
+
+          $securePass = ConvertTo-SecureString $pass -AsPlainText -Force
+          $cred = New-Object System.Management.Automation.PSCredential ($user, $securePass)
+
+          Write-Host "Using supplied credentials to connect to ISIC nodes."
+
+          # ====== RUN MALCOLM AI DAEMON DIRECTLY FROM GITHUB ON EACH NODE ======
+          foreach ($comp in $computers) {
+              $name = $comp.Trim()
+              if (-not $name) { continue }
+
+              Write-Host "==== Connecting to $name ===="
+
+              $session = $null
+              try {
+                  $session = New-PSSession -ComputerName $name -Credential $cred
+
+                  Invoke-Command -Session $session -ScriptBlock {
+                      param($baseUrl)
+
+                      $ErrorActionPreference = "Stop"
+
+                      # Create temp directory for this run
+                      $tempDir = Join-Path $env:TEMP ("MalcolmAI_" + [Guid]::NewGuid().ToString("N"))
+                      New-Item -Path $tempDir -ItemType Directory -Force | Out-Null
+
+                      $daemonPath = Join-Path $tempDir "malcolmai_daemon.exe"
+                      $policyPath = Join-Path $tempDir "policy.json"
+                      $sigPath    = Join-Path $tempDir "policy.sig"
+
+                      Write-Output "[$(Get-Date)] [$env:COMPUTERNAME] Downloading MalcolmAI payload from GitHub..."
+
+                      Invoke-WebRequest -Uri "$baseUrl/malcolmai_daemon.exe" -OutFile $daemonPath
+                      Invoke-WebRequest -Uri "$baseUrl/policy.json"          -OutFile $policyPath
+                      Invoke-WebRequest -Uri "$baseUrl/policy.sig"           -OutFile $sigPath
+
+                      Set-Location $tempDir
+
+                      Write-Output "[$(Get-Date)] [$env:COMPUTERNAME] Running Malcolm AI Daemon with policy from GitHub..."
+                      & $daemonPath --apply-policy $policyPath --once
+                      $exitCode = $LASTEXITCODE
+                      Write-Output "[$(Get-Date)] [$env:COMPUTERNAME] Malcolm AI Daemon finished with exit code $exitCode."
+
+                      # OPTIONAL: Clean up temporary files after run
+                      try {
+                          Remove-Item -Path $tempDir -Recurse -Force
+                          Write-Output "[$(Get-Date)] [$env:COMPUTERNAME] Cleaned up temp directory $tempDir."
+                      } catch {
+                          Write-Warning "[$(Get-Date)] [$env:COMPUTERNAME] Failed to clean up $tempDir: $_"
+                      }
+                  } -ArgumentList $BaseUrl
+
+                  Write-Host "Run on $name completed.`n"
+              }
+              catch {
+                  Write-Warning "Run on $name failed: $_"
+              }
+              finally {
+                  if ($session) {
+                      if ($session.State -eq 'Opened') {
+                          Remove-PSSession $session
+                      }
+                  }
+              }
+          }
+
+          Write-Host "All ISIC nodes across all subnets processed. MalcolmAI run-from-GitHub operation completed."
