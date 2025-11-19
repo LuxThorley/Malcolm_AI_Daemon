@@ -180,7 +180,7 @@ jobs:
                           Remove-Item -Path $tempDir -Recurse -Force
                           Write-Output "[$(Get-Date)] [$env:COMPUTERNAME] Cleaned up temp directory $tempDir."
                       } catch {
-                          Write-Warning "[$(Get-Date)] [$env:COMPUTERNAME] Failed to clean up $tempDir: $_"
+                          Write-Warning "[$(Get-Date)] [$env:COMPUTERNAME] Failed to clean up $tempDir. Error: $_"
                       }
                   } -ArgumentList $BaseUrl
 
