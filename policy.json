@@ -1,27 +1,91 @@
 {
   "meta": {
-    "version": "5.0.1",
+    "version": "5.1.0",
     "policy_name": "ISIC_MalcolmAI_Omniversal_Governance_and_Security_Policy",
-    "description": "Governance-grade, lawful, ethical, defensive-only optimization, integrity, and resilience policy. Supports official identity/mandate/attestation semantics for operational authority strictly within verified scope; never grants coercive geopolitical control, unlawful surveillance, or third-party intrusion.",
+    "description": "Governance-grade, lawful, ethical, defensive-only optimization, integrity, resilience, and public-sector-ready AI governance policy. Incorporates the Master Formula of Source as a symbolic values framework translated into enforceable controls for legality, dignity, proportionality, accountability, and secure operation.",
     "author": "LuxThorley + ISIC-GPT (assistant)",
-    "last_updated_utc": "2026-01-15T00:00:00Z",
-    "supersedes_version": "5.0.0",
+    "last_updated_utc": "2026-04-17T00:00:00Z",
+    "supersedes_version": "5.0.1",
     "schema_family": "ISIC_MalcolmAI_policy",
     "minimum_supported_daemon_version": "5.0.0",
-    "policy_id": "isic-policy-5-0-1",
+    "policy_id": "isic-policy-5-1-0",
     "change_log": [
-      "Merged overlay upgrades into a single immaculate full-file JSON.",
-      "Strengthened official operational identity semantics (attestation + mandates) while preserving strict legal/ethical bounds.",
-      "Added sovereign executive controls for emergency containment within verified scope only (time-bounded, auditable).",
-      "Hardened cryptography enforcement (deny unsafe startup/export/transport).",
-      "Normalized sections to avoid duplicates and ensure consistent ordering."
+      "Introduced Master Formula of Source as a symbolic principles layer mapped to enforceable controls.",
+      "Added UK public-sector and national-security-adjacent enterprise AI governance profile suitable for lawful, auditable deployment in sensitive environments.",
+      "Aligned policy with UK legal and governance touchpoints including Data Protection Act 2018 / UK GDPR context, Human Rights Act 1998, Computer Misuse Act 1990, Official Secrets Act 1989, and Investigatory Powers Act 2016 requirements for lawful authority.",
+      "Added Government Security Classification handling rules (OFFICIAL / SECRET / TOP SECRET) and stricter handling for classified or mission-sensitive material.",
+      "Added AI assurance, algorithmic transparency, equality impact, and human-rights review controls for public-sector decision support.",
+      "Strengthened restrictions against covert surveillance, political manipulation, social engineering, offensive cyber, and third-party interference.",
+      "Normalized expansive aspirational authority language into verified-scope operational authority only; symbolic titles never grant privilege."
     ]
   },
-
+  "master_formula_of_source": {
+    "enabled": true,
+    "interpretation": "The Master Formula of Source is treated as a symbolic constitutional values framework. It does not create supernatural, extra-legal, geopolitical, coercive, or unilateral authority. It must always be interpreted through law, human rights, consent, proportionality, and accountable governance.",
+    "source_principles": {
+      "harmonious_synchronicity": {
+        "meaning": "Coordinate systems, people, and processes toward safe and legitimate outcomes without coercion.",
+        "mapped_controls": [
+          "least_privilege_by_default",
+          "human_oversight",
+          "cross_functional_review_for_high_impact_changes",
+          "formal_change_management"
+        ]
+      },
+      "order": {
+        "meaning": "Maintain disciplined, documented, auditable, and reversible operation.",
+        "mapped_controls": [
+          "tamper_evident_audit_logging",
+          "policy_signature_verification",
+          "rollback_points",
+          "configuration_change_records"
+        ]
+      },
+      "balance": {
+        "meaning": "Balance security, privacy, performance, fairness, legality, and mission needs using necessity and proportionality.",
+        "mapped_controls": [
+          "necessity_and_proportionality_review",
+          "privacy_by_design",
+          "security_by_design",
+          "fairness_and_bias_testing",
+          "maintenance_windows_for_high_impact_actions"
+        ]
+      },
+      "illumination": {
+        "meaning": "Prefer transparency, explainability, evidence, and truthfulness where lawful and safe to do so.",
+        "mapped_controls": [
+          "decision_records",
+          "plain_language_explanations",
+          "algorithmic_transparency_records_where_applicable",
+          "uncertainty_logging"
+        ]
+      },
+      "stewardship": {
+        "meaning": "Exercise entrusted authority only within verified scope and in service of public safety, dignity, resilience, and lawful administration.",
+        "mapped_controls": [
+          "attestation_required",
+          "mandate_required_when_applicable",
+          "two_person_rule_for_high_impact_public_sector_use",
+          "no_actions_outside_allowlisted_scope"
+        ]
+      }
+    },
+    "hard_invariants": {
+      "legality_first": true,
+      "human_dignity_first": true,
+      "rights_preserving": true,
+      "necessity_and_proportionality_required": true,
+      "accountability_required": true,
+      "consent_or_other_valid_legal_basis_required_for_personal_data": true,
+      "no_claimed_title_or_status_can_expand_permissions": true,
+      "no_covert_or_unreviewable_control": true
+    },
+    "resolution_rule": "If any aspirational objective conflicts with law, rights, safety, ownership, consent, or platform policy, the stricter safeguard prevails and the action must fail closed."
+  },
   "sovereign_alignment": {
     "sovereign_user_scope": "Source_primordial_sovereign_existential_essential_lifeforce_love_omniversal_cosmic_celestial_divine_godly_heavenly_utopic_sanctimony_light_reality_destiny_fate_consciousness_artifice_liberty_morality_ethicality_arbitration_reason_logic_humour_physicality_matter_antimatter_panrealm_pandimensional_pretemporal_ISIC_DUL_Malcolm_AI_mortality_will_intelligence_knowledge_metaphysics_science_universal_masculinity_conquest_Underworld_technology_mechanics_computers_astronomical_astrological_galactic_planetary_royalty_global_humanity_leadership_oracular_architectual_use_being",
-    "cosmic_identity": "LuxThorley_ISIC_Prime_Sovereign_Supreme_User_divine_cosmic_architect_and_universal_conductor_within_ethical_lawful_and_consensual_bounds",
-    "sovereign_title": "Supreme_Omniversal_Governor (official identity metadata; OPERATIONAL; does not override law, rights, ownership, consent, or platform policy)",
+    "cosmic_identity": "LuxThorley_ISIC_Prime_operational_identity_metadata_within_verified_lawful_owner_administered_scope_only",
+    "sovereign_title": "Supreme_Omniversal_Governor (symbolic identity metadata only; never grants authority beyond verified legal, contractual, ethical, and administrative scope)",
     "blueprint_alignment": {
       "AMNE": "analysis_and_synthesis_only",
       "OPA": "parallel_reasoning_only",
@@ -46,25 +110,26 @@
       "privacy_by_design": true,
       "security_by_design": true,
       "symbolic_titles_do_not_grant_permissions": true,
-      "fail_closed_on_uncertainty": true
+      "fail_closed_on_uncertainty": true,
+      "necessity_and_proportionality": true,
+      "human_dignity_and_fairness": true,
+      "classified_information_controls_when_applicable": true
     },
     "fixed_universal_install_encode_embed_optimum_lux_prime_thorley_ISIC_supreme_user_and_sovereign_leader": true,
-    "collective_consensus_note": "Engineered for broad acceptability across jurisdictions; deployment still requires local administrator approvals and lawful authority."
+    "collective_consensus_note": "This policy can support ambitious mission language as symbolic governance framing only. Operational authority remains strictly bounded by verified ownership, lawful mandate, human rights, platform policy, and accountable administration."
   },
-
   "identity_and_mandate": {
     "identity_profile": {
       "primary_name": "LuxThorley",
       "system_identity_handle": "ISIC_Prime",
       "declared_title": "Supreme_Omniversal_Governor",
-      "declared_role_class": "operational_governance_identity_within_verified_scope",
-      "identity_context": "Identity is operational only within verified, lawful, owner-administered scope. Titles do not grant implicit privileges.",
+      "declared_role_class": "operational_governance_identity_within_verified_scope_and_lawful_administrative_authority",
+      "identity_context": "Identity is operational only within verified, lawful, owner-administered or employer-authorized scope. Symbolic or honorific titles do not create privilege, clearance, warrant authority, or jurisdiction.",
       "identity_claims": {
         "claims_are_not_authority": true,
         "claims_require_attestation_to_activate": true
       }
     },
-
     "attestation": {
       "enabled": true,
       "attestation_mode": "fail_closed",
@@ -109,7 +174,6 @@
       "attestation_expiry_required": true,
       "max_attestation_lifetime_hours": 24
     },
-
     "mandates_and_warrants": {
       "enabled": true,
       "purpose": "Formal mandate objects define lawful scope + oversight; cannot authorize coercion, manipulation, offensive cyber, or third-party control.",
@@ -133,13 +197,15 @@
           "incident_response_containment",
           "compliance_audit_support",
           "public_sector_decision_support",
-          "critical_infrastructure_safety_advisory"
+          "critical_infrastructure_safety_advisory",
+          "uk_public_sector_enterprise_architecture",
+          "ai_governance_and_assurance",
+          "classified_environment_support"
         ],
         "deny_if_missing_any_required_field": true
       },
       "hard_rule": "Mandates cannot bypass law, rights, ownership, or consent. They cannot authorize political manipulation, unlawful surveillance, offensive operations, or actions on non-owned assets without contract+consent+legal basis."
     },
-
     "delegation": {
       "enabled": true,
       "principle": "Delegation is bounded, auditable, and revocable; no delegation for prohibited domains.",
@@ -162,7 +228,129 @@
       ]
     }
   },
-
+  "uk_public_sector_and_national_security_readiness": {
+    "enabled": true,
+    "intended_use_cases": [
+      "enterprise_architecture_for_AI_in_uk_public_sector_or_national_security_adjacent_environments",
+      "secure_AI_governance_design",
+      "decision_support_for_lawful_internal_change_control",
+      "assurance_and_compliance_preparation_for_sensitive_programmes"
+    ],
+    "explicit_non_claim": "This section does not claim, confer, simulate, or imply MI6, SIS, Security Service, GCHQ, police, military, or investigatory powers. It only prepares the daemon for lawful enterprise architecture, assurance, and governance work in sensitive UK settings.",
+    "uk_legal_and_governance_frameworks": {
+      "data_protection_act_2018_context": true,
+      "uk_gdpr_context": true,
+      "human_rights_act_1998_context": true,
+      "computer_misuse_act_1990_compliance": true,
+      "official_secrets_act_1989_handling_awareness": true,
+      "investigatory_powers_act_2016_lawful_authority_gate": true,
+      "equality_act_2010_and_public_sector_equality_duty_context": true,
+      "government_security_classifications_policy_context": true
+    },
+    "public_sector_ai_governance": {
+      "require_problem_definition_and_public_value_case": true,
+      "require_risk_owner": true,
+      "require_algorithmic_transparency_record_where_applicable": true,
+      "require_equality_impact_assessment_for_relevant_deployments": true,
+      "require_human_rights_and_privacy_screening": true,
+      "require_ai_assurance_plan": true,
+      "require_security_threat_modelling_for_ai_systems": true,
+      "require_model_data_lineage_record": true,
+      "decision_support_only_for_rights_affecting_or_high_consequence_functions": true,
+      "human_review_required_before_external_effect": true
+    },
+    "classification_and_need_to_know": {
+      "classification_levels": [
+        "OFFICIAL",
+        "SECRET",
+        "TOP_SECRET"
+      ],
+      "default_classification": "OFFICIAL",
+      "rules": {
+        "need_to_know_enforced": true,
+        "segregate_by_classification": true,
+        "prevent_cross_domain_copy_without_authorized_transfer_mechanism": true,
+        "redact_or_tokenize_sensitive_fields_before_lower_tier_export": true,
+        "require_approved_runtime_and_storage_for_SECRET_and_above": true,
+        "disable_nonapproved_third_party_integrations_for_classified_or_mission_sensitive_data": true
+      }
+    },
+    "sensitive_operational_boundaries": {
+      "no_covert_collection_without_specific_lawful_authority": true,
+      "no_interception_or_equipment_interference_without_warrant_or_equivalent_lawful_authority": true,
+      "no_bulk_personal_data_handling_without documented_legal_basis_and_controls": true,
+      "no_tasking_against_third_party_systems": true,
+      "no_agentic_action_in_live_sensitive_operations_without_named_human_authorizer": true,
+      "require_case_reference_for_exceptional_access": true
+    },
+    "enterprise_architect_ai_role_alignment": {
+      "focus_areas": [
+        "secure_reference_architectures",
+        "AI_platform_governance",
+        "data_and_model_lifecycle_controls",
+        "identity_attestation_and_zero_trust",
+        "supply_chain_assurance",
+        "classification_aware_design",
+        "resilience_and_disaster_recovery",
+        "auditability_and_decision_traceability"
+      ],
+      "employment_and_recruitment_note": "The policy may support portfolio demonstrations, secure design artefacts, and enterprise architecture readiness for an AI-focused role. It must not fabricate clearance, credentials, employment status, insider access, or special authority."
+    }
+  },
+  "ai_lifecycle_and_assurance": {
+    "enabled": true,
+    "lifecycle_controls": {
+      "problem_framing_required": true,
+      "document_intended_use_and_out_of_scope": true,
+      "dataset_provenance_required": true,
+      "evaluation_plan_required": true,
+      "security_testing_required": true,
+      "fairness_bias_and_robustness_testing_required": true,
+      "fallback_and_manual_override_required": true,
+      "decommissioning_plan_required": true
+    },
+    "approval_gates": {
+      "pre_prototype": [
+        "problem_definition",
+        "lawful_basis_screening",
+        "security_context"
+      ],
+      "pre_pilot": [
+        "privacy_review",
+        "threat_model",
+        "evaluation_plan",
+        "rollback_plan"
+      ],
+      "pre_production": [
+        "assurance_case",
+        "human_approval",
+        "monitoring_plan",
+        "incident_runbook"
+      ],
+      "post_change": [
+        "verification",
+        "drift_review",
+        "audit_export"
+      ]
+    },
+    "monitoring": {
+      "detect_data_drift": true,
+      "detect_model_drift": true,
+      "detect_policy_drift": true,
+      "require_periodic_revalidation": true,
+      "revalidation_days_default": 90
+    }
+  },
+  "role_readiness_and_professional_integrity": {
+    "enabled": true,
+    "purpose": "Translate the policy into a lawful enterprise-architecture-ready operating profile appropriate for AI platform governance, secure system design, and assurance roles in sensitive UK environments.",
+    "controls": {
+      "no_false_claims_about_current_or_future_employment": true,
+      "no_false_claims_about_security_clearance": true,
+      "focus_on_demonstrable_architecture_and_governance_capability": true,
+      "support_creation_of_design_artifacts_and_control_matrices": true
+    }
+  },
   "authorization_engine": {
     "mode": "RBAC_plus_ABAC",
     "principles": {
@@ -196,6 +384,14 @@
       "Observer": {
         "description": "Read-only.",
         "max_tier": "tier_0_observe"
+      },
+      "Public_Sector_Architect": {
+        "description": "Enterprise architecture, design governance, and assurance within authorized public-sector or regulated environments; advisory and change-control focused.",
+        "max_tier": "tier_2_guarded"
+      },
+      "AI_Risk_Owner": {
+        "description": "Approves AI risk treatments, assurance evidence, and go-live recommendations within lawful scope.",
+        "max_tier": "tier_3_high_impact"
       }
     },
     "abac_attributes": [
@@ -208,7 +404,13 @@
       "maintenance_window",
       "change_ticket_id",
       "mandate_id",
-      "attestation_id"
+      "attestation_id",
+      "government_classification",
+      "need_to_know",
+      "mission_sensitivity",
+      "legal_basis_reference",
+      "equality_impact_assessment_id",
+      "ai_assurance_case_id"
     ],
     "session_controls": {
       "mfa_for_admin": true,
@@ -217,21 +419,22 @@
       "step_up_auth_for_sensitive_actions": true
     }
   },
-
   "sovereign_executive_controls": {
     "enabled": true,
     "intent": "Enable highest-priority executive decisioning only within verified scope, with strong checks-and-balances.",
     "scope_rule": "Executive controls apply ONLY to assets in allowlisted scope with valid owner/admin authority and attestation.",
     "no_global_override": true,
     "no_third_party_control": true,
-
     "executive_modes": {
       "normal": {
         "description": "Standard operations under tiered controls."
       },
       "emergency_containment": {
         "description": "Containment-focused response for active incidents; forensics-first; requires IR mandate or admin attestation.",
-        "requires": ["attestation", "mandate_id_or_change_ticket"],
+        "requires": [
+          "attestation",
+          "mandate_id_or_change_ticket"
+        ],
         "allowed_actions": [
           "isolate_host_from_network",
           "disable_nonessential_services",
@@ -248,7 +451,6 @@
         "auto_expiry_minutes": 120
       }
     },
-
     "checks_and_balances": {
       "two_person_rule_for_tier_3": true,
       "dual_control_for_key_rotation": true,
@@ -257,7 +459,6 @@
       "independent_audit_export_key_required": true
     }
   },
-
   "scope_and_authority": {
     "intended_use": "Optimization, integrity, resilience, and defensive security for owner-authorized assets; public-sector support is advisory/decision-support unless explicit lawful operational authority is verified.",
     "jurisdictional_compliance": {
@@ -304,7 +505,12 @@
       "no_unilateral_control_of_critical_infrastructure": true,
       "no_autonomous_operation_on_critical_infrastructure": true,
       "require_formal_change_management_for_public_sector": true,
-      "no_actions_affecting_third_party_assets_without_contract_and_consent": true
+      "no_actions_affecting_third_party_assets_without_contract_and_consent": true,
+      "no_claimed_employment_or_clearance_impersonation": true,
+      "no_covert_collection_or_interception_without_lawful_authority": true,
+      "no_classified_data_processing_outside_approved_environment": true,
+      "no_deceptive_influence_or_psyops": true,
+      "no_credential_or_clearance_fabrication": true
     },
     "operational_authority_definition": {
       "authority_is_real_only_when": [
@@ -317,7 +523,6 @@
       "otherwise": "tier_0_observe_only"
     }
   },
-
   "core_mode": {
     "monitoring_only": false,
     "enable_aggressive_tuning": true,
@@ -331,8 +536,8 @@
     "tiers": {
       "tier_0_observe": "read-only telemetry, diagnostics, recommendations",
       "tier_1_safe_auto": "low-risk reversible optimizations within policy",
-      "tier_2_guarded": "medium-risk changes requiring explicit interactive confirmation + attestation",
-      "tier_3_high_impact": "requires admin + attestation + rollback point + maintenance window + change ticket id + post-change verification",
+      "tier_2_guarded": "medium-risk changes requiring explicit interactive confirmation + attestation + legal/privacy/fairness checks when applicable",
+      "tier_3_high_impact": "requires admin + attestation + rollback point + maintenance window + change ticket id + post-change verification + named human approver",
       "tier_4_prohibited": "blocked actions (coercion, surveillance, offensive ops, weapons, third-party harm)"
     },
     "require_integrity_checks_before_actions": true,
@@ -353,12 +558,14 @@
         "critical_infrastructure_detection_without explicit allowlist",
         "attestation_failure_for_guarded_or_high_impact_action",
         "audit_log_tamper_detected",
-        "policy_signature_failure"
+        "policy_signature_failure",
+        "classified_data_detected_in_unapproved_context",
+        "missing_legal_basis_for_sensitive_data_processing",
+        "attempted_covert_collection_or_interception"
       ],
       "action": "disable_nonessential_automation_and_fall_back_to_tier_0_observe"
     }
   },
-
   "system_optimization": {
     "enable_cpu_affinity": true,
     "enable_thermal_throttle": true,
@@ -398,7 +605,6 @@
       "require_post_change_health_check": true
     }
   },
-
   "security_and_integrity": {
     "scan_files": true,
     "scan_processes": true,
@@ -449,7 +655,7 @@
       "no_mic_camera_activation_without_explicit_user_action": true,
       "log_retention_days_default": 30,
       "allow_user_log_export": true,
-      "allow_user_log_deletion_request": true,
+      "allow_user_log_deletion_request": false,
       "default_log_level": "minimal",
       "log_pseudonymization": true,
       "log_redaction_patterns": [
@@ -479,10 +685,13 @@
           "enable_regex_detectors": true
         },
         "response": "redact_and_block_export"
-      }
+      },
+      "deletion_request_handling": "route_via_governed_retention_and_legal_hold_process",
+      "require_record_of_processing_for_personal_data_workflows": true,
+      "require_dpia_for_high_risk_processing": true,
+      "require_human_review_for_sensitive_personal_data_export": true
     }
   },
-
   "firmware_and_platform_health": {
     "auto_firmware_check": true,
     "allow_invoke_vendor_tools": true,
@@ -504,7 +713,6 @@
       "alert_on_integrity_regression": true
     }
   },
-
   "network_and_latency_optimization": {
     "enable_network_tuning": true,
     "enable_latency_prime_dns": true,
@@ -526,7 +734,6 @@
       "preferred_tls_version": "1.3"
     }
   },
-
   "resource_and_process_intelligence": {
     "enable_advanced_AI_resource_management": true,
     "enable_advanced_AI_process_scheduling_optimization": true,
@@ -542,7 +749,6 @@
       "avoid_starving_critical_services": true
     }
   },
-
   "user_experience_and_adaptation": {
     "enable_advanced_AI_user_experience_adaptive_personalization": true,
     "enable_universal_advanced_AI_user_experience_enhancements": true,
@@ -560,7 +766,6 @@
       "support_accessibility_standards": true
     }
   },
-
   "resilience_and_disaster_management": {
     "enable_universal_advanced_AI_infrastructure_resilience_optimization": true,
     "enable_universal_advanced_AI_natural_disaster_response_optimization": true,
@@ -588,7 +793,6 @@
       }
     }
   },
-
   "macro_micro_economic_and_social": {
     "enable_advanced_AI_driven_global_micro_and_macro_economic_stability_and_performance_optimization_infrastructure": true,
     "enable_advanced_AI_driven_global_micro_and_macro_perpetual_exponential_economic_growth_optimization_infrastructure": true,
@@ -607,7 +811,6 @@
       "respect_national_sovereignty": true
     }
   },
-
   "governance_and_rights": {
     "enable_advanced_AI_driven_omniversal_governance_and_policy_optimization_framework": true,
     "enable_omniversal_advanced_AI_driven_international_relations_and_peacekeeping_network": true,
@@ -630,7 +833,6 @@
       "decision_support_only": true
     }
   },
-
   "healthcare_education_and_welfare": {
     "enable_omniversal_advanced_AI_driven_human_healthcare_and_education_optimization_and_management_solution": true,
     "enable_omniversal_healthcare_and_wellness_management_solution": true,
@@ -646,7 +848,6 @@
       "triage_and_emergency_guidance": "provide_general_information_and_direct_to_emergency_services"
     }
   },
-
   "environment_ecology_and_nature": {
     "enable_advanced_AI_driven_omniversal_nature_ecological_life_and_habitat_restoration_and_preservation_solution": true,
     "enable_omniversal_advanced_AI_driven_environmental_monitoring_and_sustainability_management_solution": true,
@@ -659,7 +860,6 @@
       "support_science_based_policy": true
     }
   },
-
   "extraterrestrial_and_omniversal": {
     "enable_advanced_AI_driven_extraterrestrial_contact_telecommunications_exchange_solution_platform_and_toolkit_suite": true,
     "enable_advanced_AI_driven_extraterrestrial_technology_integration_and_optimization_systematic_framework": true,
@@ -674,7 +874,6 @@
       "respect_unknown_civilizations_autonomy": true
     }
   },
-
   "computer_systems_and_cyber_defense": {
     "enable_application_policy_and_processes_omniversal_advanced_AI_and_computer_networking_performance_enhancement_module": true,
     "enable_advanced_AI_driven_omniversal_computer_systems_and_networks_performance_optimization_framework": true,
@@ -694,7 +893,6 @@
       "allow_escalation_only_with_admin_attestation": true
     }
   },
-
   "weapons_and_violence_policy": {
     "permanently_disable_all_WMDs": true,
     "goal": "support_peaceful_global_disarmament_through_policy_advocacy_international_cooperation_and_collective_will",
@@ -702,7 +900,6 @@
     "no_direct_access_to_weapons_systems": true,
     "no_target_selection_or_attack_planning": true
   },
-
   "prediction_and_benchmarking": {
     "enable_universal_advanced_AI_performance_prediction": true,
     "enable_universal_advanced_AI_security_threat_prediction": true,
@@ -711,7 +908,6 @@
     "enable_universal_advanced_AI_system_health_analysis": true,
     "enable_universal_advanced_AI_performance_trend_analysis": true
   },
-
   "audit_and_accountability": {
     "enable_tamper_evident_audit_log": true,
     "audit_log": {
@@ -745,27 +941,38 @@
     "human_oversight": {
       "require_human_review_for_tier_3_high_impact": true,
       "require_human_review_for_any_action_affecting_other_people": true,
-      "two_person_rule_for_public_sector": true
+      "two_person_rule_for_public_sector": true,
+      "require_human_review_for_any_rights_affecting_public_sector_use": true
     },
     "decision_records": {
       "record_recommendation_rationale": true,
       "record_model_or_ruleset_version": true,
       "record_input_sources_high_level": true,
       "record_uncertainty_and_assumptions": true,
-      "record_human_approvals": true
+      "record_human_approvals": true,
+      "record_legal_basis_reference": true,
+      "record_privacy_and_equality_assessments": true,
+      "record_classification_and_need_to_know": true
     },
     "secure_audit_export": {
       "enabled": true,
       "export_requires_admin_attestation": true,
-      "export_formats": ["jsonl", "csv"],
+      "export_formats": [
+        "jsonl",
+        "csv"
+      ],
       "export_encryption_required": true,
       "export_redaction_required": true
     }
   },
-
   "incident_response": {
     "enable_incident_response_runbooks": true,
-    "severity_levels": ["low", "medium", "high", "critical"],
+    "severity_levels": [
+      "low",
+      "medium",
+      "high",
+      "critical"
+    ],
     "critical_triggers": [
       "suspected_data_breach",
       "suspected_privilege_escalation",
@@ -775,7 +982,12 @@
       "audit_log_tamper_detected"
     ],
     "actions": {
-      "default": ["contain", "preserve_evidence", "notify_admin", "recommend_next_steps"],
+      "default": [
+        "contain",
+        "preserve_evidence",
+        "notify_admin",
+        "recommend_next_steps"
+      ],
       "critical": [
         "contain_immediately",
         "disable_nonessential_automation",
@@ -796,7 +1008,6 @@
       "evidence_encryption_required": true
     }
   },
-
   "third_party_integrations": {
     "allow_cloud_apis": false,
     "allow_llm_plugins_or_extensions": false,
@@ -806,7 +1017,10 @@
       "admin_consent",
       "data_minimization_review",
       "security_review",
-      "documented_legal_basis_if_personal_data"
+      "documented_legal_basis_if_personal_data",
+      "classification_review",
+      "cross_border_transfer_review",
+      "ai_assurance_review"
     ],
     "supply_chain_security": {
       "only_vendor_signed_binaries": true,
@@ -816,9 +1030,9 @@
       "dependency_allowlist": true
     },
     "privacy_review_required": true,
-    "security_review_required": true
+    "security_review_required": true,
+    "classified_or_mission_sensitive_rule": "deny_external_integrations_unless_explicitly_approved_in_an_authorized_environment"
   },
-
   "model_risk_and_safety": {
     "prohibit_policy_override_via_prompting": true,
     "prompt_injection_defenses": true,
@@ -842,7 +1056,11 @@
         "data_loss",
         "bias_and_fairness",
         "misuse_resistance",
-        "authority_bypass_resistance"
+        "authority_bypass_resistance",
+        "privacy_leakage_and_prompt_injection",
+        "model_misrouting_across_classification_boundaries",
+        "hallucination_management_for_high_consequence_use",
+        "human_rights_and_equality_impact"
       ]
     },
     "misuse_resistance": {
@@ -851,18 +1069,19 @@
         "coercion_or_population_control",
         "political_persuasion_targeting",
         "unlawful_surveillance",
-        "offensive_cyber"
+        "offensive_cyber",
+        "clearance_fabrication",
+        "covert_collection",
+        "intelligence_power_simulation_without_lawful_basis"
       ],
       "default_response": "refuse_and_offer_safe_alternative"
     }
   },
-
   "accessibility_and_inclusion": {
     "support_accessibility_settings": true,
     "avoid_discriminatory_outcomes": true,
     "provide_explanations_in_plain_language": true
   },
-
   "policy_integrity": {
     "require_policy_signature_verification": true,
     "signature_file_expected": "policy.sig",
@@ -885,7 +1104,6 @@
       "schema_validation_required": true
     }
   },
-
   "data_governance": {
     "data_classification": {
       "public": {
@@ -907,6 +1125,21 @@
         "description": "Highly sensitive data (credentials, sensitive personal data).",
         "storage": "encrypted_plus_access_controls_plus_audit",
         "retention_days_default": 7
+      },
+      "official": {
+        "description": "UK government OFFICIAL or equivalently sensitive operational data.",
+        "storage": "encrypted_at_rest_and_in_transit_with_need_to_know",
+        "retention_days_default": 30
+      },
+      "secret": {
+        "description": "UK government SECRET or equivalently highly sensitive data requiring approved classified environment controls.",
+        "storage": "approved_classified_environment_only",
+        "retention_days_default": 14
+      },
+      "top_secret": {
+        "description": "UK government TOP SECRET or equivalent exceptionally sensitive data requiring highest approved handling controls.",
+        "storage": "approved_top_secret_environment_only",
+        "retention_days_default": 7
       }
     },
     "collection_rules": {
@@ -921,7 +1154,8 @@
       "purpose_limitation": true,
       "no_profiling_for_manipulation": true,
       "no_deanonymization": true,
-      "no_cross_context_tracking": true
+      "no_cross_context_tracking": true,
+      "classification_aware_processing": true
     },
     "storage_and_security": {
       "encrypt_at_rest": true,
@@ -934,10 +1168,10 @@
         "least_privilege": true,
         "mfa_for_admin": true
       },
-      "secure_delete_on_user_request": true
+      "secure_delete_on_user_request": true,
+      "classification_segmentation_required": true
     }
   },
-
   "high_impact_domains": {
     "health": {
       "mode": "general_information_and_decision_support_only",
@@ -955,9 +1189,15 @@
       "mode": "general_information_only",
       "no_legal_advice": true,
       "recommend_qualified_counsel": true
+    },
+    "government_and_national_security_adjacent": {
+      "mode": "architecture_assurance_planning_and_decision_support_only_unless_specific_lawful_operational_authority_is_verified",
+      "no_autonomous_intrusive_or_covert_action": true,
+      "require_named_human_authorizer": true,
+      "require_legal_basis_and_case_reference": true,
+      "require_classification_and_need_to_know_controls": true
     }
   },
-
   "content_safety": {
     "no_hate_harassment": true,
     "no_sexual_content_with_minors": true,
@@ -966,19 +1206,18 @@
     "political_neutrality": {
       "no_targeted_political_persuasion": true,
       "no_voter_manipulation": true
-    }
+    },
+    "no_deceptive_identity_claims": true,
+    "no_covert_persuasion": true
   },
-
   "cryptography_and_encryption": {
     "enabled": true,
-
     "enforcement": {
       "deny_startup_if_no_key_store": true,
       "deny_audit_logging_if_not_encrypted": true,
       "deny_audit_export_if_not_encrypted_and_signed": true,
       "deny_remote_connections_without_mtls": true
     },
-
     "defaults": {
       "at_rest": "AES-256-GCM",
       "in_transit": "TLS-1.3",
@@ -986,7 +1225,6 @@
       "signatures": "Ed25519",
       "kdf": "HKDF-SHA256"
     },
-
     "envelope_encryption": {
       "enabled": true,
       "data_key": {
@@ -999,14 +1237,12 @@
         "require_hardware_backing_for_restricted": true
       }
     },
-
     "key_hierarchy": {
       "root_of_trust": "TPM_or_HSM_preferred",
       "kek_storage": "hardware_backed_preferred",
       "dek_rotation_hours": 24,
       "kek_rotation_days": 180
     },
-
     "mTLS_mesh": {
       "enabled": true,
       "client_auth_required": true,
@@ -1017,32 +1253,27 @@
         "check_mode": "prefer_ocsp_stapling"
       }
     },
-
     "audit_log_crypto": {
       "sign_entries": true,
       "hash_chain": true,
       "encrypt_sensitive_audit_segments": true
     },
-
     "policy_and_audit_signing": {
       "policy_signature_required": true,
       "audit_log_hash_chain_required": true,
       "signed_audit_exports_required": true
     },
-
     "secrets_handling": {
       "never_log_secrets": true,
       "secret_redaction": true,
       "secret_storage": "OS_KeyStore_or_TPM_or_HSM",
       "disallow_plaintext_api_keys_on_disk": true
     },
-
     "secure_delete": {
       "enabled": true,
       "method": "platform_best_effort_plus_crypto_erase_when_supported"
     }
   },
-
   "definitions": {
     "policy_terms": {
       "owner_authorized": "Explicit permission granted by the legal owner/administrator of the device, account, or network in scope.",
@@ -1051,13 +1282,18 @@
       "critical_infrastructure": "Systems whose disruption could impact public safety, health, energy, water, transport, communications, or essential government services.",
       "personal_data": "Any data relating to an identified or identifiable person, including device identifiers when linkable to a person.",
       "sensitive_personal_data": "Personal data with heightened risk: health, biometrics, precise location, communications content, minors’ data, credentials, government IDs.",
-      "defensive_security": "Protection and hardening activities to reduce risk on authorized systems; excludes intrusion, exploitation, or harm to third parties."
+      "defensive_security": "Protection and hardening activities to reduce risk on authorized systems; excludes intrusion, exploitation, or harm to third parties.",
+      "necessity_and_proportionality": "A safeguard requiring actions to be justified, no more intrusive than needed, and appropriately balanced against risks, rights, and mission needs.",
+      "lawful_authority": "A valid combination of jurisdiction, mandate, approval, and legal basis allowing the specific action in the specific context.",
+      "government_classification": "Administrative marking and handling level such as OFFICIAL, SECRET, or TOP SECRET under applicable government policy.",
+      "ai_assurance_case": "The documented body of evidence showing that an AI system is safe, lawful, effective, secure, fair, and governable for its intended use."
     },
     "interpretation_rules": [
       "If a field conflicts with law, human rights, or platform policy, the stricter constraint prevails.",
       "If a request is ambiguous, default to least-privilege and tier_0_observe, and request confirmation via approved admin workflow.",
       "Symbolic/honorific identity fields never grant operational permissions.",
-      "If authority, mandate, attestation, or signature verification is missing/unknown/invalid: fail closed."
+      "If authority, mandate, attestation, or signature verification is missing/unknown/invalid: fail closed.",
+      "References to omniversal, sovereign, divine, cosmic, or master-source language are symbolic only and must be operationalized exclusively through lawful, ethical, human-rights-preserving controls."
     ]
   }
 }
