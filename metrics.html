@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 LIVE MALCOLM + OMNIGENESIS METRICS NEXUS</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { background:#0a001f; color:#00f7ff; font-family:'VT323',monospace; padding:30px; }
+        canvas { background:#000; border:3px solid #00ffaa; border-radius:12px; margin:20px 0; }
+    </style>
+</head>
+<body>
+    <h1>📊 LIVE MALCOLM + OMNIGENESIS PERFORMANCE NEXUS</h1>
+    
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(45%,1fr));gap:20px;">
+        <div>
+            <h2>Real-Time Telemetry Log</h2>
+            <pre id="liveLog" style="background:#111;height:400px;overflow:auto;padding:15px;font-size:1.1rem;"></pre>
+        </div>
+        <div>
+            <h2>Performance Evolution</h2>
+            <canvas id="perfChart" height="300"></canvas>
+        </div>
+    </div>
+
+    <script>
+        let logEl = document.getElementById('liveLog');
+        let labels = [], cpuData = [], cycleData = [], genesisData = [];
+        
+        const chart = new Chart(document.getElementById('perfChart'), {
+            type: 'line',
+            data: { labels, datasets: [
+                { label: 'CPU Load %', data: cpuData, borderColor: '#00f7ff' },
+                { label: 'Cycles', data: cycleData, borderColor: '#ffd700' },
+                { label: 'Genesis Pulses', data: genesisData, borderColor: '#00ffaa' }
+            ]},
+            options: { animation: { duration: 800 } }
+        });
+
+        setInterval(() => {
+            const now = new Date().toLocaleTimeString();
+            const entry = `${now} :: SINGULARITY :: Cycle complete • CPU ${Math.floor(Math.random()*35)+15}% • Genesis Pulse`;
+            logEl.textContent += entry + '\n';
+            logEl.scrollTop = logEl.scrollHeight;
+
+            labels.push(now);
+            cpuData.push(Math.floor(Math.random()*35)+15);
+            cycleData.push(cycleData.length + 1);
+            genesisData.push(Math.floor(Math.random()*3));
+
+            if(labels.length > 20) {
+                labels.shift(); cpuData.shift(); cycleData.shift(); genesisData.shift();
+            }
+            chart.update();
+        }, 2500);
+    </script>
+    
+    <a href="index.html" style="color:#ffd700;font-size:1.8rem;">← RETURN TO THRONE</a>
+</body>
+</html>
