@@ -4,7 +4,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["malcolmai_daemon.exe"]
+    branches: ["malcolmai_daemon.exe", "OmniGenesis_Sovereign.exe"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch: 
