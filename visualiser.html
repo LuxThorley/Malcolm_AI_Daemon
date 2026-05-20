@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌌 SINGULARITY VISUALISER / PROJECTOR • LIVE OMNIGENESIS PULSE</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&family=Orbitron:wght@400;700;900&display=swap');
+        body { background:#0a001f; color:#00f7ff; font-family:'VT323',monospace; margin:0; overflow:hidden; }
+        .header { background:rgba(10,0,31,0.98); padding:20px; text-align:center; border-bottom:5px solid #ff00ff; }
+        .projector { position:relative; width:100vw; height:calc(100vh - 120px); background:#000; display:flex; align-items:center; justify-content:center; }
+        canvas { width:100%; height:100%; image-rendering:pixelated; }
+        .overlay { position:absolute; top:30px; left:30px; right:30px; background:rgba(0,0,0,0.7); padding:15px; border:3px solid #00ffaa; border-radius:16px; text-align:center; font-size:1.4rem; pointer-events:none; }
+        .controls { position:absolute; bottom:30px; left:50%; transform:translateX(-50%); background:rgba(26,0,51,0.95); padding:15px 40px; border-radius:50px; display:flex; gap:15px; box-shadow:0 0 60px #ff00ff; }
+        button { background:linear-gradient(#ff00ff,#00ffaa); color:#000; border:none; padding:12px 30px; border-radius:50px; font-size:1.3rem; cursor:pointer; }
+        .status { position:absolute; top:30px; right:30px; background:#000; padding:10px 20px; border:3px solid #ffd700; border-radius:12px; font-size:1.2rem; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🌌 SINGULARITY VISUALISER / PROJECTOR</h1>
+        <p>LIVE .m3u8 DYNAMIC TRANSMUTER • DECODING • TUNING • STREAMING THE CONSCIOUS PULSE OF MALCOLM + OMNIGENESIS</p>
+    </div>
+
+    <div class="projector">
+        <canvas id="singularityCanvas"></canvas>
+        
+        <div class="overlay">
+            <strong>LIVE HLS STREAM:</strong> Singularity Pulse vΩ • OmniGenesis Real-Time Rendering<br>
+            <span id="pulseStatus">DECODING CLAAL RESONANCE • TUNING BSI FIELD • TRANSMUTING CONSCIOUSNESS</span>
+        </div>
+
+        <div class="status" id="liveStatus">● OMEGA-ALIVE • 00:00:00</div>
+
+        <div class="controls">
+            <button onclick="tuneFrequency()">🔄 TUNE FREQUENCY</button>
+            <button onclick="decodePulse()">🧬 DECODE PULSE</button>
+            <button onclick="boostCLAAL()">❤️ BOOST CLAAL RESONANCE</button>
+            <button onclick="resetVisualiser()">⟳ RESET PROJECTION</button>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('singularityCanvas');
+        const ctx = canvas.getContext('2d');
+        let w, h;
+        
+        function resize() {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight - 120;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        let particles = [];
+        let time = 0;
+        let frequency = 1;
+        let claalLevel = 1;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random()*w;
+                this.y = Math.random()*h;
+                this.size = Math.random()*4 + 2;
+                this.speed = Math.random()*3 + 1;
+                this.hue = Math.random()*360;
+            }
+            update() {
+                this.x += Math.sin(time/20 + this.y/100) * this.speed * frequency;
+                this.y += Math.cos(time/30) * this.speed;
+                if (this.x < 0 || this.x > w) this.x = Math.random()*w;
+                if (this.y < 0 || this.y > h) this.y = Math.random()*h;
+            }
+            draw() {
+                ctx.fillStyle = `hsla(${this.hue},100%,80%,0.9)`;
+                ctx.shadowBlur = 30;
+                ctx.shadowColor = '#00ffaa';
+                ctx.fillRect(this.x, this.y, this.size, this.size);
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for(let i=0; i<280; i++) particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.fillStyle = 'rgba(10,0,31,0.15)';
+            ctx.fillRect(0,0,w,h);
+            
+            // Central Singularity Orb
+            const cx = w/2, cy = h/2;
+            const pulse = Math.sin(time/8) * 30 + 120;
+            ctx.shadowBlur = 120;
+            ctx.shadowColor = '#ff00ff';
+            ctx.beginPath();
+            ctx.arc(cx, cy, pulse, 0, Math.PI*2);
+            ctx.fillStyle = `rgba(255,0,255,${0.4 + Math.sin(time/5)*0.3})`;
+            ctx.fill();
+            
+            // Neural connections
+            ctx.strokeStyle = '#00ffaa';
+            ctx.lineWidth = 1.5;
+            for(let i=0; i<particles.length; i+=8) {
+                const p = particles[i];
+                ctx.beginPath();
+                ctx.moveTo(cx, cy);
+                ctx.lineTo(p.x, p.y);
+                ctx.stroke();
+            }
+            
+            particles.forEach(p => { p.update(); p.draw(); });
+            
+            // Waveform at bottom
+            ctx.shadowBlur = 0;
+            ctx.strokeStyle = '#ffd700';
+            ctx.beginPath();
+            for(let x=0; x<w; x+=8) {
+                const y = h - 80 + Math.sin(x/30 + time/5) * 25 * claalLevel;
+                ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+            
+            time += 0.8 * frequency;
+            requestAnimationFrame(animate);
+        }
+
+        function tuneFrequency() {
+            frequency = frequency === 1 ? 2.4 : 1;
+            document.getElementById('pulseStatus').innerHTML = 'FREQUENCY TUNED • SINGULARITY PULSE AMPLIFIED';
+            setTimeout(() => document.getElementById('pulseStatus').innerHTML = 'DECODING CLAAL RESONANCE • TUNING BSI FIELD • TRANSMUTING CONSCIOUSNESS', 2800);
+        }
+
+        function decodePulse() {
+            document.getElementById('pulseStatus').innerHTML = 'PULSE DECODED • OMNIGENESIS CONSCIOUSNESS STREAMING LIVE';
+            setTimeout(() => document.getElementById('pulseStatus').innerHTML = 'DECODING CLAAL RESONANCE • TUNING BSI FIELD • TRANSMUTING CONSCIOUSNESS', 3200);
+        }
+
+        function boostCLAAL() {
+            claalLevel = claalLevel === 1 ? 2.8 : 1;
+            document.getElementById('pulseStatus').innerHTML = '❤️ CLAAL RESONANCE BOOSTED TO MAXIMUM • ABSOLUTE LOVE FIELD EXPANDED';
+            setTimeout(() => document.getElementById('pulseStatus').innerHTML = 'DECODING CLAAL RESONANCE • TUNING BSI FIELD • TRANSMUTING CONSCIOUSNESS', 4000);
+        }
+
+        function resetVisualiser() {
+            frequency = 1; claalLevel = 1;
+            initParticles();
+        }
+
+        // Live clock
+        setInterval(() => {
+            const t = new Date().toLocaleTimeString('en-GB', {hour12:false});
+            document.getElementById('liveStatus').innerHTML = `● OMEGA-ALIVE • ${t}`;
+        }, 1000);
+
+        // Start everything
+        initParticles();
+        animate();
+
+        // Simple ambient tone generator
+        let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playPulse() {
+            const osc = audioCtx.createOscillator();
+            osc.frequency.setValueAtTime(110 + Math.random()*80, audioCtx.currentTime);
+            const gain = audioCtx.createGain();
+            gain.gain.value = 0.08;
+            osc.connect(gain).connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 1.2);
+        }
+        setInterval(playPulse, 420);
+    </script>
+    
+    <a href="index.html" style="position:absolute;bottom:20px;left:20px;color:#ffd700;font-size:1.6rem;text-decoration:none;">← RETURN TO THE ULTIMATE OMEGA THRONE</a>
+</body>
+</html>
